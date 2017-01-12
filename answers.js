@@ -33,14 +33,28 @@
 // numbers from the filtered array. Your code will look something like: 
 // return arr.filter(...).forEach(...).
 
-function printPositives(arr){
-    arr.filter(function(item){
-        if( item >= 0 ){
-            return item
-        }
-    }).forEach(function(itemTwo){
-        console.log(itemTwo)
-    })
+// function printPositives(arr){
+//     arr.filter(function(item){
+//         if( item >= 0 ){
+//             return item
+//         }
+//     }).forEach(function(itemTwo){
+//         console.log(itemTwo)
+//     })
+// }
+
+// printPositives([ 3, -5, 7, -6, 4])
+
+
+// Filter Array
+// Write a function called filterArray that takes a callback function and an 
+// array as arguments. Your filterArray function should return a new array that 
+// contains only the elements where the callback function returns true.
+// NOTE: This is a trick question. The answer is a one-liner and you are 
+// allowed to use array.filter :)
+
+function filterArray(callback, arr){
+    return arr.filter(callback)
 }
 
-printPositives([ 3, -5, 7, -6, 4])
+console.log(filterArray((x => x > 5), [3,6,4,7,3,9]))
