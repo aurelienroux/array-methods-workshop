@@ -18,12 +18,29 @@
 // takes an array and uses the filter method to return a new array with 
 // only the positive numbers.
 
-function getPositives(arr){
+// function getPositives(arr){
+//     arr.filter(function(item){
+//         if(item >= 0){
+//             console.log(item)
+//         }
+//     })
+// }
+
+// getPositives([ 3, -5, 7, -6, 4])
+
+// Filter it out
+// Re-do exercise 1 by first filtering the input array, and then printing the 
+// numbers from the filtered array. Your code will look something like: 
+// return arr.filter(...).forEach(...).
+
+function printPositives(arr){
     arr.filter(function(item){
-        if(item >= 0){
-            console.log(item)
+        if( item >= 0 ){
+            return item
         }
+    }).forEach(function(itemTwo){
+        console.log(itemTwo)
     })
 }
 
-getPositives([ 3, -5, 7, -6, 4])
+printPositives([ 3, -5, 7, -6, 4])
