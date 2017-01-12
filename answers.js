@@ -122,35 +122,52 @@
 // other number. See if you can initialize your reduce accumulator with 
 // Infinity and -Infinity :)
 
-function highLow(arr){
-    var high = arr.reduce(function(a,b){
-        if(b>a){
-            return b
-        } 
-        return a 
-    }, -Infinity)
-    var low = arr.reduce(function(a,b){
-        if (b<a){
-            return b
-        } 
-        return a
-    }, Infinity)
-    return {highest: high,lowest: low}
+// function highLow(arr){
+//     var high = arr.reduce(function(a,b){
+//         if(b>a){
+//             return b
+//         } 
+//         return a 
+//     }, -Infinity)
+//     var low = arr.reduce(function(a,b){
+//         if (b<a){
+//             return b
+//         } 
+//         return a
+//     }, Infinity)
+//     return {highest: high,lowest: low}
+// }
+
+// console.log(highLow([1, -10, 20, 40, 5]))
+
+
+// //This is not mine, Nathaniel showed me how to refactor with ES6 :)
+// function hL(arr) {
+//     return {
+//         highest: arr.reduce( (a, b) => (b>a ? b : a), -Infinity ),
+//         lowest: arr.reduce( (a, b) => (b<a ? b : a), Infinity )
+//     }
+// }
+
+// Wheel of Fortune
+// Write a function called countChars that takes a string, and returns an object 
+// where the keys are letters, and the value is the number of 
+// times that letter appears.
+
+function countChars(str){
+    var strSplit = str.split("");
+    var obj = {};
+    strSplit.forEach(function(item){
+        if(item in obj){
+            obj[item]++
+        } else {
+            obj[item] = 0;
+            obj[item]++;
+        }
+    })
+    
+    return (obj)
+    // console.log(strSplit)
 }
 
-console.log(highLow([1, -10, 20, 40, 5]))
-
-
-//This is not mine, Nathaniel showed me how to refactor with ES6 :)
-function hL(arr) {
-    return {
-        highest: arr.reduce( (a, b) => (b>a ? b : a), -Infinity ),
-        lowest: arr.reduce( (a, b) => (b<a ? b : a), Infinity )
-    }
-}
-
-
-
-
-
-
+console.log(countChars("hello world"))
