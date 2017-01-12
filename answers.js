@@ -53,8 +53,29 @@
 // NOTE: This is a trick question. The answer is a one-liner and you are 
 // allowed to use array.filter :)
 
-function filterArray(callback, arr){
-    return arr.filter(callback)
+// function filterArray(callback, arr){
+//     return arr.filter(callback)
+// }
+
+// console.log(filterArray((x => x > 5), [3,6,4,7,3,9]))
+
+
+// The Longest Word
+// Write a function called longestWord that takes a string as argument, and returns 
+// the longest word in the string. You should use Array.prototype.reduce to do your work.
+// Hint: You can use String.prototype.split to split the string into an array of words.
+
+
+function longestWord(str){
+        var strSplit = str.split(" ");
+        var sol = strSplit.reduce(function(a, b){
+        if( a.length < b.length){
+            return b
+        } else {
+            return a
+        }
+    })
+    return sol
 }
 
-console.log(filterArray((x => x > 5), [3,6,4,7,3,9]))
+console.log(longestWord("This is a sentence for an example"))
