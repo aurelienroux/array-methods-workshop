@@ -60,22 +60,53 @@
 // console.log(filterArray((x => x > 5), [3,6,4,7,3,9]))
 
 
+
 // The Longest Word
 // Write a function called longestWord that takes a string as argument, and returns 
 // the longest word in the string. You should use Array.prototype.reduce to do your work.
 // Hint: You can use String.prototype.split to split the string into an array of words.
 
+// function longestWord(str){
+//         var strSplit = str.split(" ");
+//         var sol = strSplit.reduce(function(a, b){
+//         if( a.length < b.length){
+//             return b
+//         } else {
+//             return a
+//         }
+//     })
+//     return sol
+// }
 
-function longestWord(str){
-        var strSplit = str.split(" ");
-        var sol = strSplit.reduce(function(a, b){
-        if( a.length < b.length){
-            return b
-        } else {
-            return a
+// console.log(longestWord("This is a sentence for an example"))
+
+
+// I'd like to buy a vowel
+// Write a function called countVowels that takes a string and returns the number 
+// of vowels in the string. You should use Array.prototype.reduce to do your work.
+
+// For the string "The quick brown fox", the output should be 5 because there is 
+// one e, one u, one i and two os.
+
+// Hint: You can use String.prototype.split again. There is a way to use it to 
+// split a string by character. Try to Google it :)
+
+// Hint 2: You can create an array of vowels and use Array.prototype.indexOf to 
+// check if the current letter is a vowel.
+
+function countVowels(str){
+    var vowels = ["a","e","i","o","u"]
+    var strSplit = str.split("");
+    return strSplit.reduce(function(tmp, letter){
+        if(vowels.indexOf(letter) !== -1){
+            tmp.push(letter)
         }
-    })
-    return sol
+        return tmp;
+    }, []).length
+
 }
 
-console.log(longestWord("This is a sentence for an example"))
+console.log(countVowels("The quick brown fox"))
+
+// var vowels = ["a","e","i","o","u"]
+// console.log(vowels.indexOf("b"))
