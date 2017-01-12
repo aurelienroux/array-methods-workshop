@@ -94,19 +94,63 @@
 // Hint 2: You can create an array of vowels and use Array.prototype.indexOf to 
 // check if the current letter is a vowel.
 
-function countVowels(str){
-    var vowels = ["a","e","i","o","u"]
-    var strSplit = str.split("");
-    return strSplit.reduce(function(tmp, letter){
-        if(vowels.indexOf(letter) !== -1){
-            tmp.push(letter)
-        }
-        return tmp;
-    }, []).length
+// function countVowels(str){
+//     var vowels = ["a","e","i","o","u"]
+//     var strSplit = str.split("");
+//     return strSplit.reduce(function(tmp, letter){
+//         if(vowels.indexOf(letter) !== -1){
+//             tmp.push(letter)
+//         }
+//         return tmp;
+//     }, []).length
+// }
 
+// console.log(countVowels("The quick brown fox"))
+
+
+
+// High? Low?
+
+// Write a function called highLow that takes an array of numbers, and returns an 
+// object with a property highest containing the highest number, and a property 
+// lowest containing the lowest number, using Array.prototype.reduce.
+
+// For example, starting with [1, -10, 20, 40, 5], your function should return 
+// {highest: 40, lowest: -10}.
+
+// Hint: Javascript has a special value called Infinity, which is higher than any 
+// other number. See if you can initialize your reduce accumulator with 
+// Infinity and -Infinity :)
+
+function highLow(arr){
+    var high = arr.reduce(function(a,b){
+        if(b>a){
+            return b
+        } 
+        return a 
+    }, -Infinity)
+    var low = arr.reduce(function(a,b){
+        if (b<a){
+            return b
+        } 
+        return a
+    }, Infinity)
+    return {highest: high,lowest: low}
 }
 
-console.log(countVowels("The quick brown fox"))
+console.log(highLow([1, -10, 20, 40, 5]))
 
-// var vowels = ["a","e","i","o","u"]
-// console.log(vowels.indexOf("b"))
+
+//This is not mine, Nathaniel showed me how to refactor with ES6 :)
+function hL(arr) {
+    return {
+        highest: arr.reduce( (a, b) => (b>a ? b : a), -Infinity ),
+        lowest: arr.reduce( (a, b) => (b<a ? b : a), Infinity )
+    }
+}
+
+
+
+
+
+
