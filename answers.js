@@ -154,20 +154,52 @@
 // where the keys are letters, and the value is the number of 
 // times that letter appears.
 
-function countChars(str){
-    var strSplit = str.split("");
-    var obj = {};
-    strSplit.forEach(function(item){
-        if(item in obj){
-            obj[item]++
-        } else {
-            obj[item] = 0;
-            obj[item]++;
-        }
-    })
+// function countChars(str){
+//     var strSplit = str.split("");
+//     var obj = {};
+//     strSplit.forEach(function(item){
+//         if(item in obj){
+//             obj[item]++
+//         } else {
+//             obj[item] = 0;
+//             obj[item]++;
+//         }
+//     })
     
-    return (obj)
-    // console.log(strSplit)
+//     return (obj)
+//     // console.log(strSplit)
+// }
+// console.log(countChars("hello world"))
+
+// //Nathaniel solution
+// function countCharNatSol(string) {
+//     return string.split("").reduce((a, b) => {!a.b ? a.b.c=1 : a.b++; return a}, {})
+// }
+
+// Functional Programming
+// Let's take a break from calling array methods and think about a certain situation 
+// that occurs with the filter method. Array.prototype.filter will filter out elements 
+// where the callback function returns a falsy value. What if we wanted to do the opposite, 
+// and filter out elements which return a truthy value?
+
+function negate(func) {
+    // your solution goes here
+    return function(x){
+        return !func(x);
+    }
 }
 
-console.log(countChars("hello world"))
+// Original functions
+function isEven(num) {
+  return num % 2 === 0;
+}
+function isEmpty(someList) {
+  return someList.length === 0;
+}
+
+// New functions
+var isOdd = negate(isEven);
+var isNotEmpty = negate(isEmpty);
+
+console.log([1,2,3].filter(isEven)) // [2]
+console.log([1,2,3].filter(isOdd)) // [1,3]
