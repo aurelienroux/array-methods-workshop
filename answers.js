@@ -12,7 +12,11 @@
 
 // printPositives([ 3, -5, 7, -6, 4])
 
-
+//REFACTOR **************************************
+// function printPositives(arr){
+//     return arr.filter( (ele) => ele > 0)
+//             .forEach( (ele) => console.log(ele));
+// }
 
 
 
@@ -31,7 +35,11 @@
 
 // getPositives([ 3, -5, 7, -6, 4])
 
-
+//REFACTOR **************************************
+// function printPositives(arr){
+//     return arr.filter( (ele) => ele > 0)
+//             .forEach( (ele) => console.log(ele));
+// }
 
 
 
@@ -54,6 +62,11 @@
 
 // printPositives([ 3, -5, 7, -6, 4])
 
+//REFACTOR **************************************
+// function printPositives(arr){
+//     return arr.filter( (ele) => ele > 0)
+//             .forEach( (ele) => console.log(ele));
+// }
 
 
 
