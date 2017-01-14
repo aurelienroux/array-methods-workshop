@@ -13,6 +13,9 @@
 // printPositives([ 3, -5, 7, -6, 4])
 
 
+
+
+
 // Get positive
 // Similar to the previous exercise, write a function called getPositives that 
 // takes an array and uses the filter method to return a new array with 
@@ -27,6 +30,12 @@
 // }
 
 // getPositives([ 3, -5, 7, -6, 4])
+
+
+
+
+
+
 
 // Filter it out
 // Re-do exercise 1 by first filtering the input array, and then printing the 
@@ -46,6 +55,9 @@
 // printPositives([ 3, -5, 7, -6, 4])
 
 
+
+
+
 // Filter Array
 // Write a function called filterArray that takes a callback function and an 
 // array as arguments. Your filterArray function should return a new array that 
@@ -58,6 +70,9 @@
 // }
 
 // console.log(filterArray((x => x > 5), [3,6,4,7,3,9]))
+
+
+
 
 
 
@@ -79,6 +94,11 @@
 // }
 
 // console.log(longestWord("This is a sentence for an example"))
+
+
+
+
+
 
 
 // I'd like to buy a vowel
@@ -106,6 +126,8 @@
 // }
 
 // console.log(countVowels("The quick brown fox"))
+
+
 
 
 
@@ -149,32 +171,86 @@
 //     }
 // }
 
+// // Ziad solution ****************************************************
+// var numbers = [-100, 100, 500, 50, 25, 0];
+
+// function findExtremes(arr) {    
+//     return arr.reduce(function(currentExtremes, num) {
+//         if (num < currentExtremes.lowest) {
+//             currentExtremes.lowest = num;
+//         }
+//         if (num > currentExtremes.highest) {
+//             currentExtremes.highest = num;
+//         }
+        
+//         return currentExtremes;
+        
+//     }, {lowest: Infinity, highest: -Infinity});
+// }
+
+// findExtremes(numbers)
+
+
+
+
+
+
 // Wheel of Fortune
 // Write a function called countChars that takes a string, and returns an object 
 // where the keys are letters, and the value is the number of 
 // times that letter appears.
 
-// function countChars(str){
-//     var strSplit = str.split("");
-//     var obj = {};
-//     strSplit.forEach(function(item){
-//         if(item in obj){
-//             obj[item]++
-//         } else {
-//             obj[item] = 0;
-//             obj[item]++;
-//         }
-//     })
+function countChars(str){
+    var strSplit = str.split("");
+    var obj = {};
+    strSplit.forEach(function(item){
+        if(item in obj){
+            obj[item]++
+        } else {
+            obj[item] = 0;
+            obj[item]++;
+        }
+    })
     
-//     return (obj)
-//     // console.log(strSplit)
-// }
-// console.log(countChars("hello world"))
+    return (obj)
+    // console.log(strSplit)
+}
+console.log(countChars("hello world"))
 
-// //Nathaniel solution
-// function countCharNatSol(string) {
-//     return string.split("").reduce((a, b) => {!a.b ? a.b.c=1 : a.b++; return a}, {})
-// }
+
+//Nathaniel solution **********************************************
+function countCharNatSol(string) {
+    return string.split("").reduce((a, b) => {!a.b ? a.b=1 : a.b++; return a}, {})
+}
+console.log(countCharNatSol("hello world"))
+
+
+// Ziad solution ***************************************************
+
+// .reduce(  (l,c) =>  l[c] ? l[c]++ : l[c] = 1; return l  , {})
+// (l, c) => (l[c] ? l[c]++ : l[c] = 1; return l, {})
+
+function countLetters(aString){
+  return aString
+    .split("")
+    .filter(function(currentLetter) {
+      return currentLetter !== " ";
+    })
+    .reduce(function(letters, currentLetter) {
+      if (letters[currentLetter]) {
+        letters[currentLetter]++
+      }
+      else {
+        letters[currentLetter] = 1;
+      }
+      
+    return letters
+    
+    }, {});
+}
+console.log(countLetters("hello world"))
+
+
 
 // Functional Programming
 // Let's take a break from calling array methods and think about a certain situation 
@@ -182,24 +258,24 @@
 // where the callback function returns a falsy value. What if we wanted to do the opposite, 
 // and filter out elements which return a truthy value?
 
-function negate(func) {
-    // your solution goes here
-    return function(x){
-        return !func(x);
-    }
-}
+// function negate(func) {
+//     // your solution goes here
+//     return function(x){
+//         return !func(x);
+//     }
+// }
 
-// Original functions
-function isEven(num) {
-  return num % 2 === 0;
-}
-function isEmpty(someList) {
-  return someList.length === 0;
-}
+// // Original functions
+// function isEven(num) {
+//   return num % 2 === 0;
+// }
+// function isEmpty(someList) {
+//   return someList.length === 0;
+// }
 
-// New functions
-var isOdd = negate(isEven);
-var isNotEmpty = negate(isEmpty);
+// // New functions
+// var isOdd = negate(isEven);
+// var isNotEmpty = negate(isEmpty);
 
-console.log([1,2,3].filter(isEven)) // [2]
-console.log([1,2,3].filter(isOdd)) // [1,3]
+// console.log([1,2,3].filter(isEven)) // [2]
+// console.log([1,2,3].filter(isOdd)) // [1,3]
