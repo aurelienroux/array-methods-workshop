@@ -214,55 +214,36 @@
 // where the keys are letters, and the value is the number of 
 // times that letter appears.
 
-function countChars(str){
-    var strSplit = str.split("");
-    var obj = {};
-    strSplit.forEach(function(item){
-        if(item in obj){
-            obj[item]++
-        } else {
-            obj[item] = 0;
-            obj[item]++;
-        }
-    })
+// function countChars(str){
+//     var strSplit = str.split("");
+//     var obj = {};
+//     strSplit.forEach(function(item){
+//         if(item in obj){
+//             obj[item]++
+//         } else {
+//             obj[item] = 0;
+//             obj[item]++;
+//         }
+//     })
     
-    return (obj)
-    // console.log(strSplit)
-}
-console.log(countChars("hello world"))
+//     return (obj)
+//     // console.log(strSplit)
+// }
+// console.log(countChars("hello world"))
 
 
-//Nathaniel solution **********************************************
-function countCharNatSol(string) {
-    return string.split("").reduce((a, b) => {!a.b ? a.b=1 : a.b++; return a}, {})
-}
-console.log(countCharNatSol("hello world"))
+// //REFACTOR BUT NOT WORKING ***********************************************
+// function countChars(str){
+//     return str.split("").reduce((object, item) => { object[item] ? object[item]++: object[item] = 1; return object}, {});
+// }
 
 
-// Ziad solution ***************************************************
+// //Nathaniel solution **********************************************
+// function countCharNatSol(string) {
+//     return string.split("").reduce((a, b) => {!a.b ? a.b=1 : a.b++; return a}, {})
+// }
+// console.log(countCharNatSol("hello world"))
 
-// .reduce(  (l,c) =>  l[c] ? l[c]++ : l[c] = 1; return l  , {})
-// (l, c) => (l[c] ? l[c]++ : l[c] = 1; return l, {})
-
-function countLetters(aString){
-  return aString
-    .split("")
-    .filter(function(currentLetter) {
-      return currentLetter !== " ";
-    })
-    .reduce(function(letters, currentLetter) {
-      if (letters[currentLetter]) {
-        letters[currentLetter]++
-      }
-      else {
-        letters[currentLetter] = 1;
-      }
-      
-    return letters
-    
-    }, {});
-}
-console.log(countLetters("hello world"))
 
 
 
