@@ -204,24 +204,6 @@
 //     }
 // }
 
-// // Ziad solution ****************************************************
-// var numbers = [-100, 100, 500, 50, 25, 0];
-
-// function findExtremes(arr) {    
-//     return arr.reduce(function(currentExtremes, num) {
-//         if (num < currentExtremes.lowest) {
-//             currentExtremes.lowest = num;
-//         }
-//         if (num > currentExtremes.highest) {
-//             currentExtremes.highest = num;
-//         }
-        
-//         return currentExtremes;
-        
-//     }, {lowest: Infinity, highest: -Infinity});
-// }
-
-// findExtremes(numbers)
 
 
 
