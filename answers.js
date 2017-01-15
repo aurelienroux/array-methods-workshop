@@ -108,6 +108,12 @@
 
 // console.log(longestWord("This is a sentence for an example"))
 
+// //REFACTOR ***************************************
+// function longestWord(str){
+//     return str.split(" ").reduce( (a, b) => b.length > a.length ? b : a);
+// } 
+
+// console.log(longestWord("This is a sentence for an example"))
 
 
 
