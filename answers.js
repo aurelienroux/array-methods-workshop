@@ -146,6 +146,20 @@
 
 // console.log(countVowels("The quick brown fox"))
 
+//REFACTOR ES6**************************************
+
+// function countVowels(arr){
+//     var vowels = ["a", "e", "i", "o", "u"];
+//     return arr.split("").reduce( (tmp, letter) => {
+//         if(vowels.indexOf(letter) > 0){
+//             tmp++;
+//         }
+//         return tmp;
+//     }, 0);
+// }
+
+// console.log(countVowels("The quick brown fox"));
+
 
 
 
