@@ -195,16 +195,15 @@
 
 // console.log(highLow([1, -10, 20, 40, 5]))
 
+//REFACTOR ES6***********************************
 
-// //This is not mine, Nathaniel showed me how to refactor with ES6 :)
-// function hL(arr) {
-//     return {
-//         highest: arr.reduce( (a, b) => (b>a ? b : a), -Infinity ),
-//         lowest: arr.reduce( (a, b) => (b<a ? b : a), Infinity )
-//     }
+// function highLow(arr){
+//     var high = arr.reduce( (current, item) => (current < item ? item: current), -Infinity);
+//     var low = arr.reduce( (current, item) => (current > item ? item: current), Infinity);
+//     return {highest: high, lowest: low};
 // }
 
-
+// console.log(highLow([1, -10, 20, 40, 5]))
 
 
 
